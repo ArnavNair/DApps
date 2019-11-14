@@ -71,6 +71,9 @@ contract Adoption{
             if(pet.bid[pet.adopters[i]] > pet.bid[winner])
                 winner = pet.adopters[i];
         }
+
+	//Ensure that there is indeed a winner
+	assert(pet.bid[winner] > 0);
         
         //Return the winning adopter
         return winner;
